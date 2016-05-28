@@ -1,0 +1,108 @@
+.*{
+font-family: 'Droid Sans', sans-serif;
+}
+md-content.md-default-theme {
+  background-color: #eee;
+}
+
+md-card {
+  background-color: #fff;
+}
+md-card h2:first-of-type {
+  margin-top: 0;
+}
+
+md-toolbar .md-button.md-default-theme {
+  border-radius: 99%;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.md-toolbar-tools-bottom {
+  font-size: small;
+}
+.md-toolbar-tools-bottom :last-child {
+  opacity: 0.8;
+}
+
+md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #fff;
+}
+
+md-sidenav {
+  fill: #737373;
+}
+md-sidenav ng-md-icon {
+  position: relative;
+  top: 5px;
+}
+
+.user-avatar {
+  border-radius: 99%;
+}
+
+.my-custom-stars .button .material-icons {
+  font-size: 50px; 
+}
+
+.my-custom-stars .star-button.star-on .material-icons {
+  color: #003399; 
+}
+
+.my-custom-stars .star-button.star-off .material-icons {
+  color: #99ccff; 
+}
+.rating{
+  color: #a9a9a9;
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  outline: none;
+  
+}
+
+ul.rating {
+  display: inline-block;
+}
+
+.rating li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 1px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+
+.rating .filled {
+  color: #21568b;
+}
+li:focus {outline:none !important}
+
+.wan-material-paging .wmp-button {
+  width: 70px;
+  min-width: 70px;
+  margin: 5px;
+}
+
+
+.dialogdemoBasicUsage #popupContainer {
+  position: relative; }
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px; }
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px; }
+.dialogdemoBasicUsage button {
+  width: 200px; }
+.dialogdemoBasicUsage div#status {
+  color: #c60008; }
+  
+  

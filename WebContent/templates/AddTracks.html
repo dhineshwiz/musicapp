@@ -1,0 +1,45 @@
+  <md-dialog aria-label={{label}} flex="50"  ng-cloak>
+  <md-toolbar>
+      <div class="md-toolbar-tools">
+        
+		<span>{{label}}</span>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <ng-md-icon icon="close"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+	
+  <md-input-container class="md-icon-float md-icon-right md-block">
+<!-- Use floating label instead of placeholder --><label>Title</label>
+ <br>
+ 
+<input ng-model="track.title" type="text">
+</md-input-container>
+
+
+ 
+
+
+     
+        <md-select ng-model="track.genres" placeholder ="select geners"  multiple> <md-optgroup label="Genres">
+            <md-option ng-value="gener.id" ng-repeat="gener  in geners">
+             {{gener.name}}</md-option>
+          </md-optgroup></md-select>
+		<br>
+
+		 
+		
+ <label>Slide the rating</label>
+  <md-slider flex="" md-discrete="" ng-model="track.rating" step="1" min="1" max="5" aria-label="rating">
+      </md-slider>
+  <br>
+  <jk-rating-stars max-rating="8" rating="ctrl.rating" read-only="ctrl.readOnly" on-rating="ctrl.onRating(rating)" >
+</jk-rating-stars>
+  
+  
+      <div class="md-actions" layout="row"> <span flex></span> <md-button ng-click="cancel()"> Cancel </md-button> <md-button ng-click="addtrack()" class="md-primary"> Save </md-button> </div>
+	  
+		 
+</md-dialog>
+  

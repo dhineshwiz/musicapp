@@ -1,0 +1,29 @@
+   <md-dialog aria-label={{label}} flex="50"  ng-cloak>
+  <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h1>{{label}}</h1>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <ng-md-icon icon="close"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+	
+  <md-input-container class="md-icon-float md-icon-right md-block">
+<label>Name</label>
+ <br>
+ 
+<input ng-model="gener.name" type="text">
+</md-input-container>
+
+
+
+     
+  
+  
+      <div class="md-actions" layout="row"> <span flex></span> <md-button ng-click="cancel()"> Cancel </md-button> <md-button ng-click="addgener()" class="md-primary"> Save </md-button> </div>
+	  
+		 
+</md-dialog>
+  
+  
