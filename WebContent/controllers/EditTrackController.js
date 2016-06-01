@@ -28,7 +28,7 @@ function($scope,$mdDialog,$http,id,edit,tracks,genres)
 	});
 	
 	genres.getgenres().then(function(response){
-		alert("inside");
+		//alert("inside");
 		
 		$scope.geners=response.data;
 		

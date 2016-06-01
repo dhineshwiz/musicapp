@@ -59,7 +59,7 @@ md-sidenav ng-md-icon {
   color: #a9a9a9;
   margin: 0;
   padding: 0;
-  font-size: 50px;
+  font-size: 30px;
   outline: none;
   
 }
@@ -86,8 +86,8 @@ li:focus {outline:none !important}
 
 .wan-material-paging .wmp-button {
   width: 70px;
-  min-width: 70px;
-  margin: 5px;
+ 
+  margin: 10px;
 }
 
 
