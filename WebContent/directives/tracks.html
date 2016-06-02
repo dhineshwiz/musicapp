@@ -3,9 +3,9 @@
                                 <user-avatar></user-avatar>
                             </div>
                             
-							<div layout="row" class="md-tile-content">
+							<div layout="row" class="md-tile-content" layout-sm="column">
 							
-                             <span flex="50"><span>{{ item.title +' [' }}</span><span ng-repeat="it in item.genres">{{it.name}}<span ng-if="!$last">, </span></span> ]</span> <span flex="50" class="star-rating" star-rating rating-value="item.rating"
+                             <span flex="50" flex-sm="80"><span>{{ item.title +' [' }}</span><span ng-repeat="it in item.genres">{{it.name}}<span ng-if="!$last">, </span></span> ]</span> <span flex="50" flex-sm="80" class="star-rating" star-rating rating-value="item.rating"
 
  data-max="5" on-rating-selected="rateFunction(rating)"></span>
                               
