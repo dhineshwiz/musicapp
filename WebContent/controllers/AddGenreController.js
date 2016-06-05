@@ -2,18 +2,17 @@ angular.module('StarterApp').controller('AddGenreController',
 function($scope,$mdDialog,$http,id,edit,genres)
 {
 	$scope.label="Add Genre";
-	//$scope.gener={};
-	//alert("inside outer fun");
-	//var data22 = JSON.stringify($scope.gener);
+	
+	$scope.gener = new genres();
 	
 	$scope.addgener=function()
 	{
 		
-		genres.addgenres($scope.gener).then(function(reponse){
-		//alert("inside inner fun"); 
-			$scope.answer();
 		
-	});
+		$scope.gener.$save(function(){
+			$scope.answer();
+	  	  });
+		
 		
 	
 	}

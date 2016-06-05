@@ -2,29 +2,29 @@ angular.module('StarterApp').controller('EditGenreController',
 function($scope,$mdDialog,$http,id,edit,genres)
 {
 	$scope.label="Edit Genres";
+	$scope.gener = new genres();
 	
-	genres.editgenres(id).then(function(response){
-		
-		$scope.gener=response.data;
-	})
+	
+	$scope.gener=genres.get({id:id});
 	
 	
 	
 
-	//var data22 = JSON.stringify($scope.gener);
+	
 	$scope.addgener=function()
 	{
 		
-		genres.editupdategenres(id,$scope.gener).then(function(response){
-			
+		$scope.gener.$save(function(){
 			$scope.answer();
-		});
+  	  });
+		
+		
 		
 
 	}
 	$scope.cancel=function()
 	{
-		$scope.answer();
+		$mdDialog.hide();
 	}
 	$scope.answer = function() {
 		

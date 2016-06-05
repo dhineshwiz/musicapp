@@ -1,24 +1,19 @@
 angular.module('StarterApp').controller('AddTrackController',
 function($scope, $mdDialog, $http,id,edit,tracks,genres) {
 	$scope.label="Add Track";
-	$scope.geners=[];
-	$scope.track={};
-	//alert(edit);
 	
-	genres.getgenres().then(function(response){
-		
-		$scope.geners=response.data;
-	})
-
+	$scope.geners = new genres();
+	$scope.geners=genres.query();
 	
 	
+	$scope.track = new tracks();
+	$scope.track.rating=1;
 	$scope.addtrack=function()
 	{
-		var data=JSON.stringify($scope.track);
-		tracks.addtracks(data).then(function(){
-			$scope.answer();
 		
-		});
+		$scope.track.$save(function(){
+			$scope.answer();
+  	  });
 		
 		
 	};

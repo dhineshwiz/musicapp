@@ -1,4 +1,4 @@
-var app = angular.module('StarterApp', ['ngMaterial','ngMdIcons','fc.paging','angularUtils.directives.dirPagination','ngMdIcons']);
+var app = angular.module('StarterApp', ['ngMaterial','ngMdIcons','fc.paging','angularUtils.directives.dirPagination','ngMdIcons','ngResource']);
 
 app.controller('AppCtrl', function($scope,$mdBottomSheet, $mdSidenav, 
 		$mdDialog, $http, $mdSidenav,$templateCache,$timeout,
@@ -7,6 +7,21 @@ app.controller('AppCtrl', function($scope,$mdBottomSheet, $mdSidenav,
 	$scope.tracks=[];
 	$scope.track=[];
 	$scope.search={};
+	$scope.tab1active=true;
+	$scope.tab2active=false;
+	$scope.left_function=function()
+	{
+		$scope.tab1active=false;
+		$scope.tab2active=true;
+		
+	}
+	$scope.right_function=function()
+	{
+		$scope.tab2active=false;
+		$scope.tab1active=true;
+		
+		
+	}
 	$scope.currentPage=1;
 	$scope.toastPosition = angular.extend({},{
       bottom: true,
@@ -37,7 +52,7 @@ app.controller('AppCtrl', function($scope,$mdBottomSheet, $mdSidenav,
 	};
 	$scope.showeditrack=function(event,track_id)
 	{
-		
+		//alert(track_id);
 			   
 			   $mdDialog.show({
       controller: 'EditTrackController',
@@ -70,11 +85,12 @@ app.controller('AppCtrl', function($scope,$mdBottomSheet, $mdSidenav,
 	}
 	$scope.initialload=function()
 	{
-		tracks.gettracks().then(function(response){
+		/*tracks.gettracks().then(function(response){
 			
 			$scope.tracks=response.data;
 			//alert("inside initial load");
-		});
+		});*/
+		$scope.tracks=tracks.query();
 		//alert("inside initial load");
 		
                     
@@ -94,10 +110,12 @@ app.controller('AppCtrl', function($scope,$mdBottomSheet, $mdSidenav,
 	};
 	$scope.getgener=function()
 	{
-		genres.getgenres().then(function(response){
+		/*genres.getgenres().then(function(response){
 			
 			$scope.geners=response.data;
-		});
+		});*/
+		
+		$scope.geners= genres.query();
 		
 		
 		

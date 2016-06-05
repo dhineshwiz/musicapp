@@ -1,4 +1,4 @@
-angular.module('StarterApp').factory('genres', function($http) {
+/*angular.module('StarterApp').factory('genres', function($http) {
     return {
         getgenres: function() {
            return $http.get("http://104.197.128.152:8000/v1/genres")
@@ -24,4 +24,12 @@ angular.module('StarterApp').factory('genres', function($http) {
         
         }
     };
-});
+});*/
+angular.module('StarterApp').factory('genres', ['$resource', function ($resource) {
+    return $resource('http://104.197.128.152:8000/v1/genres/:id',
+    		{id: '@id'}
+    
+    
+    
+    );
+}]);

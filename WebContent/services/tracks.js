@@ -1,4 +1,4 @@
-angular.module('StarterApp').factory('tracks', function($http) {
+/*angular.module('StarterApp').factory('tracks', function($http) {
     return {
         gettracks: function() {
            return $http.get("http://104.197.128.152:8000/v1/tracks")
@@ -26,4 +26,13 @@ angular.module('StarterApp').factory('tracks', function($http) {
     }
     
     
-});
+});*/
+
+angular.module('StarterApp').factory('tracks', ['$resource', function ($resource) {
+    return $resource('http://104.197.128.152:8000/v1/tracks/:id',
+    		{id: '@id'}
+    
+    
+    
+    );
+}]);
