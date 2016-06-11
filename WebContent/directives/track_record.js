@@ -10,11 +10,12 @@ angular.module('StarterApp').directive('trackrecord', function() {
             		readonly :'=',
             		onRatingSelected :'&',
             		max : '=',
+            		
             		showeditrack :'&'
     				
     				};
            
-            directive.templateUrl='directives/tracks.html';
+           directive.templateUrl='directives/tracks.html';
             directive.link=function(scope, elem, attrs)
             {
             	scope.edittrack=function(ev,id)

@@ -5,11 +5,14 @@
                             
 							<div layout="row" class="md-tile-content" layout-sm="column">
 							
-                             <span flex="50" flex-sm="80"><span>{{item.title + ' [' }}</span><span ng-repeat="it in item.genres">{{it.name}}<span ng-if="!$last">, </span></span> ]</span> <span flex="50" flex-sm="80" class="star-rating" star-rating rating-value="item.rating"
+                             <span flex="30" flex-sm="80"><span>{{item.title + ' [' }}</span><span ng-repeat="it in item.genres">{{it.name}}<span ng-if="!$last">, </span></span> ]</span> <span flex="30" flex-sm="80" class="star-rating" star-rating rating-value="item.rating"
 
- data-max="max" readonly='readonly'  on-rating-selected="rateFunction(rating)"></span>
-                                 
+ data-max="max" readonly='readonly'  on-rating-selected="rateFunction(rating)" ></span>
+ 
+                                <ng-sc-track track="item.title"></ng-sc-track>
                             </div>
+                            
+                            
 							 <md-button aria-label="Open Settings" ng-click="edittrack($event,item.id)">
             <ng-md-icon icon="more_vert"></ng-md-icon>
           </md-button>

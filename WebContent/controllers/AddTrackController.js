@@ -7,7 +7,9 @@ function($scope, $mdDialog, $http,id,edit,tracks,genres) {
 	
 	
 	$scope.track = new tracks();
+	//$scope.track.cldid={};
 	$scope.track.rating=1;
+	//$scope.track.cldid=12345678;
 	$scope.addtrack=function()
 	{
 		

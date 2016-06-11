@@ -314,4 +314,75 @@ app.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet,$mdDialog,
 
 
 
+app.directive('ngScTrack', ['$http',
+                            function($http) {
+                                function link(scope) {
+                                    
+                                	/*var cloudresult = new cloudsearch();
+                                	
+                                	
+                                	
+                                	
+                                	var clientid = '708abc176b8af0125b78392b9f132b4d';
+                                    //alert("hello test");
+                                    
+                                	cloudresult = cloudsearch.query({
+                                    	q:scope.track,
+                                    	client_id : clientid
+                                    	
+                                    	})
+                                    	
+                                    	scope.band = cloudresult[1].user.username;
+                                        alert(scope.band);
+                                    	scope.bandUrl = cloudresult[1].user.permalink_url;
+                                        scope.title = dacloudresultta[1].title;
+                                        scope.trackUrl = cloudresult[1].permalink_url;
+                                        //scope.albumArt = data.artwork_url.replace("large", "t500x500");
+                                        //scope.wave = data.waveform_url;
+                                        scope.stream = cloudresult[1].stream_url + '?client_id=' + clientid;
+                                        scope.song = new Audio();*/
+                                        
+                                	var clientid = '708abc176b8af0125b78392b9f132b4d'
+                                    $http({
+                                        method: 'GET',
+                                        url: 'https://api.soundcloud.com/tracks?q='+scope.track+'&client_id=708abc176b8af0125b78392b9f132b4d'
+                                    
+                                    }).
+                                    success(function(data) {
+                                        
+                                    	
+                                    	scope.bandUrl = data[1].user.permalink_url;
+                                        scope.title = data[1].title;
+                                        scope.trackUrl = data[1].permalink_url;
+                                        
+                                        scope.stream = data[1].stream_url + '?client_id=' + clientid;
+                                        scope.song = new Audio();
+                                    });
+                                    scope.playing = false;
+                                    scope.play = function() {
+                                    	alert("inside play");
+                                        scope.playing = !scope.playing;
+                                        if (!scope.playing) {
+                                            scope.song.pause();
+                                        } else {
+                                            if (scope.song.src == '') {
+                                            	//alert("inside stream");
+                                                scope.song.src = scope.stream;
+                                            }
+                                            scope.song.play();
+                                        }
+                                    }
+                                }
+                                return {
+                                    restrict: 'EA',
+                                    scope: {
+                                        track: '=',
+                                    },
+                                   template: '<a class="play" ng-click="play()"> play</a>',
+                                    link: link
+                                };
+                            }
+                        ]);
+
+
 
